@@ -1,0 +1,78 @@
+
+<!doctype html>
+
+	<script>
+		var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+		if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+		function mischandler(){
+		return false;
+		}
+		function mousehandler(e){
+		var myevent = (isNS) ? e : event;
+		var eventbutton = (isNS) ? myevent.which : myevent.button;
+		if((eventbutton==2)||(eventbutton==3)) return false;
+		}
+		document.oncontextmenu = mischandler;
+		document.onmousedown = mousehandler;
+		document.onmouseup = mousehandler;
+		</script>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+	<title id="title">Project Ease</title>
+
+	<link rel="stylesheet" href="c1.css" type="text/css"> 
+	<link rel="icon" href="favicon.ico"> 
+	<link href="style.css" rel="stylesheet" type="text/css"> 
+
+	<script src="js1.js"></script>
+	<script src="js2.js"></script>
+	<script src="js3.js"></script>
+	<script src="base.js"></script>
+
+	<script src="index.js"></script>
+</head>
+<body>
+	<div id="gradient"></div>
+	
+	<div id="engines"></div>
+
+	<div id="container">
+		<form id="form" onsubmit="return doSearch()">
+			<div id="input"><input id="i" type="text" autocomplete="off" spellcheck="false" placeholder="Search" /></div>
+			<a onclick="nextLanguage()" id="lang"></a>
+			<ul id="sugs"></ul>
+		</form>
+
+		<p id="method"></p>
+	</div>
+
+
+  
+  <footer>
+    &copy; Ashwani 
+    <br>
+Aka - Interstellar#3260 (Discord)
+  </footer>
+  
+</body>
+
+<script type="text/javascript">
+var currentTime = new Date().getHours();
+var element = document.getElementById("gradient");
+
+if (document.body) {
+    if (5 <= currentTime && currentTime < 7) {
+        element.className = "twilight";
+    } else if (7 <= currentTime && currentTime < 9) {
+        element.className = "sunrise";
+    } else if (9 <= currentTime && currentTime < 18) {
+        element.className = "day";
+    } else if (18 <= currentTime && currentTime < 20) {
+        element.className = "evening";
+    } else if (20 <= currentTime && currentTime < 22) {
+        element.className = "twilight";
+    }
+}
+</script>
+
+</html>
